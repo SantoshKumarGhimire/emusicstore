@@ -51,4 +51,9 @@ public class HomeControlller {
 
         return "viewProduct";
     }
+
+    @RequestMapping("/admin")
+    public  String adminPage(){
+        return "admin";
+    }
 }
