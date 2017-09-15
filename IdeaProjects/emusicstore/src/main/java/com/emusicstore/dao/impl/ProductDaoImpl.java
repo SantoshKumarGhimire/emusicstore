@@ -29,7 +29,8 @@ public class ProductDaoImpl implements ProductDao {
     public Product getProductById(String id) {
 
         Session session = factory.getCurrentSession();
-        Product product = (Product) session.get(Product.class,id);
+        int productId = Integer.parseInt(id);
+        Product product = (Product) session.get(Product.class,productId);
         session.flush();
 
         return product;
@@ -55,6 +56,15 @@ public class ProductDaoImpl implements ProductDao {
         Session session = factory.getCurrentSession();
         session.delete(getProductById(productId));
         session.flush();
+
+    }
+
+    public void editProduct(Product product){
+
+        Session session = factory.getCurrentSession();
+        session.saveOrUpdate(product);
+        session.flush();
+
 
     }
 }

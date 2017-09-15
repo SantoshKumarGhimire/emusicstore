@@ -21,7 +21,7 @@
         </div>
 
         <h3>
-            <a href="<c:url value="/admin">">Product Inventory</a>
+            <a href="<c:url value="/admin/productInventory"/>">Product Inventory</a>
         </h3>
 
         <p>Here you can check modify and add inventory</p>

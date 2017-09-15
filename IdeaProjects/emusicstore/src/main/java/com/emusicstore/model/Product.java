@@ -1,29 +1,37 @@
 package com.emusicstore.model;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 @Entity
+@Table (name="Product")
 public class Product {
     @Id
-    private String productId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int productId;
+
+    @NotEmpty(message="The product name must not be empty")
    private String productName;
    private String productCategory;
    private String productDescription;
+   @Min(value = 0, message = "The product price must not be less than zero")
    private double productPrice;
    private String productStatus;
    private String productCondition;
+   @Min(value = 0, message = "Unit in stock must not be less than zero")
    private int unitInStock;
    private String productManifacturer;
+   @Transient
+   private MultipartFile productImage;
 
 
-    public String getProductId() {
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 
@@ -85,6 +93,14 @@ public class Product {
 
     public String getProductManifacturer() {
         return productManifacturer;
+    }
+
+    public MultipartFile getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
     }
 
     @Override
