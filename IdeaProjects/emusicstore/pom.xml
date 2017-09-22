@@ -63,11 +63,7 @@
             <artifactId>hibernate-jpa-2.0-api</artifactId>
             <version>1.0.1.Final</version>
         </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.190</version>
-        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -85,7 +81,7 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.5</version>
+            <version>2.4</version>
         </dependency>
 
 
@@ -111,9 +107,60 @@
             <version>1.0.0.GA</version>
         </dependency>
         <!--end of validation dependencies-->
+
+        <!--spring security dependencies-->
+
+        <!--the spring contex is used for the initialization of spring security frameworks-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.1.4.RELEASE</version>
+        </dependency>
+
+        <!--the spring security dependency needs to be after the spring contex so that it would not-->
+        <!--causes any issue.-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>3.1.4.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>3.1.4.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>3.1.4.RELEASE</version>
+        </dependency>
+        <!--end of spring security dependencies-->
+
+        <!--jakson dependency for shopping cart-->
+
+        <!-- the jackson dependency package is going to help us to
+         transfer model object into json format with some annotation spring will help us to transfer json into model object and model object to json-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+        <!--end of jakson dependency-->
     </dependencies>
-
-
 
 
 </project>

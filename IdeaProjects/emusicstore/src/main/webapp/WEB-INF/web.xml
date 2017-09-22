@@ -24,4 +24,23 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <!--configuration needed for spring security-->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <!--it provides the filter proxy for the spring security-->
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <!--filter name should be same as the name of the filter chain-->
+        <filter-name>springSecurityFilterChain</filter-name>
+        <!--this url pattern is used for the interception by filter chain it checks any url pattern after root(/*) -->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--end of spring security configuration-->
+
+
+
+
+
 </web-app>

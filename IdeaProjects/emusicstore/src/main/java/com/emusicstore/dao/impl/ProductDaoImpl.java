@@ -32,7 +32,6 @@ public class ProductDaoImpl implements ProductDao {
         int productId = Integer.parseInt(id);
         Product product = (Product) session.get(Product.class,productId);
         session.flush();
-
         return product;
 
     }
